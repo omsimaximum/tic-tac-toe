@@ -1,13 +1,92 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+:root{
+  --red: #EB4747;
+  --blue: #3AB0FF
+}
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Varela Round',sans-serif;
+}
+.title{
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 30px;
+}
+/* SCOREBOARD */
+.score-board{ 
+  display: flex;
+  width: 300px;
+  margin: 20px auto;
+  justify-content: space-evenly;  
+}
+.score{
+  padding: 8px 32px;
+  border-bottom: 5px solid transparent;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.score.x.active{
+  border-bottom:5px solid var(--red);
+}
+.score.o.active{
+  border-bottom:5px solid var(--blue) ;
+}
+/* END OF SCOREBOARD */
+
+/* MSG */
+.msg{
+
+  text-align: center;
+  margin: 10px 0px;
+}
+.msg.x{
+  color: var(--red);
+}
+.msg.o{
+  color: var(--blue);
+}
+/* END OF MSG */
+.board{
+  display: grid;
+  grid-template-columns: repeat(3,100px);
+  justify-content: center;
+  border-radius: 10px;
+}
+.board button{
+  width: 100px;
+  height: 100px;
+  font-family: 'varela Round',sans-serif;
+  font-size: 80px;
+  font-weight: bold;
+  background: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 8px #000;
+}
+.btn.x{
+  color: var(--red);
+}
+.btn.o{
+  color: var(--blue);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.reset-btn{
+  width: 300px;
+  display: block;
+  padding: 16px 24px;
+  margin: 50px auto;
+  background: none;
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  transition: 0.5s;
 }
+.reset-btn:hover{
+  background: var(--red);
+  color: #fff;
+}
+
+
